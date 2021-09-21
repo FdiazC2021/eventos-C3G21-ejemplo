@@ -65,25 +65,33 @@
             <br/>
 
             <h2>Tablas</h2>
-            <table>
+            <table border ="1">
                 <thead>
                     <tr>
                         <th>Cliente</th>
                         <th>Salón</th>
-                        <th>Servicios</th>
+                        <th>Servicio</th>
                         <th>Total</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Juan</td>
+                        <!-- <td rowspan="2">Juan</td> para unir dos celdas en una columna-->
                         <td>Grande</td>
                         <td>Banda en vivo</td>
-                        <td>$200000</td>
+                        <td>$2000000</td>
+                    </tr>
+                    <tr>
+                        <td>Juan</td>
+                        <td>Grande</td>
+                        <td>Animador</td>
+                        <td>$2000000</td>
                     </tr>
                     <tr>
                         <td>Maria</td>
                         <td>Normal</td>
+                        <!-- <td colspan="2">Normal - sonido</td> para unir celdas en una fila-->
                         <td>Sonido</td>
                         <td>$100000</td>
                     </tr>
@@ -92,6 +100,21 @@
 
                 </tfoot>
             </table>
+            <br/>
+            <h2>Formularios</h2>
+            <form action="#" method="post">
+                <label for="fecha">Fecha</label>
+                <input type="date" name="fecha"  />
+                <br><br>
+                <label for="cliente">Cliente</label>
+                <input type="text" name="cliente" placeholder="Escriba su nombre" />
+                <br><br>
+                <label for="cantidad_meseros">Meseros Extras</label>
+                <input type="number" name= "cantidad_meseros" placeholder="Número de meseros">
+                <br><br>
+                <input type="radio" name= "salon" value="N"> Normal
+                <input type="radio" name= "salon" value="G"> Grande
+            </form>
         <!-- Contenido principal -->
     </main>
     <section>
@@ -100,6 +123,11 @@
     <footer>
         <!-- Pie de página -->
     </footer>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     
 </body>
 
