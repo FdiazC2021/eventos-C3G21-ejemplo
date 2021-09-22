@@ -114,6 +114,34 @@
                 <br><br>
                 <input type="radio" name= "salon" value="N"> Normal
                 <input type="radio" name= "salon" value="G"> Grande
+                <br><br>
+                <input type="checkbox" name= "servicios[]" value="1"> Animador
+                <input type="checkbox" name= "servicios[]" value="2"> Sonido 
+                <input type="checkbox" name= "servicios[]" value="3"> DJ
+                <input type="checkbox" name= "servicios[]" value="4"> Banda en vivo
+                <input type="checkbox" name= "servicios[]" value="5"> Organizador
+                <br><br>
+                <label for="vino">Tipo de vino</label>
+                <select name="vino" >
+                    <option value="-1">Seleccione el tipo de vino</option>
+                    <option value="1">Tinto</option>
+                    <option value="2">Rose</option>
+                    <option value="3">Blanco</option>
+                    <option value="4">Espumoso</option>
+                </select>
+                <br><br>
+                <label for="observaciones">Observaciones</label>
+                <textarea name="observaciones" id="" cols="30" rows="10"></textarea>
+                <br><br>
+                <input type="button" value="Botón">
+                <button type="button">Botón</button>
+                <br><br>
+                <input type="reset" value="Resetear">
+                <button type="reset">Resetear</button>
+                <br><br>
+                <input type="submit" value="Enviar">
+                <button type="submit">Enviar</button>
+                <!-- este ultimo button envia la info a la URL que este en el campo form action en # -->
             </form>
         <!-- Contenido principal -->
     </main>
