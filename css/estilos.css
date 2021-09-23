@@ -1,4 +1,28 @@
+/*
+Comentario CSS
+*/
+
+#titulo_enlaces{
+    background-color: lightblue;
+    color: lightcoral;
+    text-align: right;
+    font-size: 32pt;
+}
+
+.fondo_naranja{
+    background-color: orange;
+    color: white;
+    font-size: 50pt;
+}
+
+main{
+    color: blue;
+}
 h2{
     color: orange;
     font-size: 80pt;
+    text-align: center;
+}
+h2{
+    font-size: 16pt;
 }
