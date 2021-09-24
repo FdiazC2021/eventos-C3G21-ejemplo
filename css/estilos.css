@@ -26,3 +26,29 @@ h2{
 h2{
     font-size: 16pt;
 }
+
+#lista_servicios li a:hover{
+    background-color: blueviolet;
+    color: white;
+    /* margin: 10px; */
+}
+
+a:link{
+    background-color: red;
+    color: white;
+}
+
+a:visited {
+    background-color: yellow;
+    color: black;
+}
+
+a{
+    background-color: blue;
+    color: white;
+}
+
+h2:active{
+    background-color: blueviolet;
+    color: white;
+}
