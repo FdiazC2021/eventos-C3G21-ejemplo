@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caramel&display=swap" rel="stylesheet">
     <title>Listado de eventos</title>
     <style>
         body{
             background-color: lightgray;
             display: grid;
             grid-template-columns: 1fr 2fr;
-            grid-template-rows: 100px 80px 1fr 40px;
+            grid-template-rows: 6.25rem 5rem 1fr 40px;
             height: 100vh;
+            font-family: 'Caramel', cursive;
             row-gap: 16px;
             column-gap: 16px;
         }
@@ -26,6 +30,18 @@
         nav{
             background-color: blueviolet;
             grid-column: 1/3;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            align-items: center;
+            text-align: center;
+            column-gap: 5rem;
+        }
+
+        nav a{
+            color: white;
+            border: 0.125rem solid white;
+            text-decoration: none;
+            padding: 1rem;
         }
 
         aside{
@@ -36,6 +52,8 @@
         main{
             background-color: crimson;
             text-align: center;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
         }
 
         footer{
@@ -49,6 +67,22 @@
             text-align: center;
             /* margin: 0 auto; */
         }
+
+        main .tablas{
+            grid-row: 2 / 3;
+        }
+
+        main .formulario{
+            grid-column: 2 / 3;
+            grid-row: 1 / span 3;
+        }
+
+        /* #img{
+            width: 25rem;
+        }
+        #img img{
+            width: 100%;
+        } */
     </style>
 </head>
 <body>
@@ -88,89 +122,100 @@
                 </li>
             </ul>
     </aside>
-    <main><h2>Imagenes</h2>
-        <img height="100px" src="https://i.ytimg.com/vi/olVNMbNC7OI/maxresdefault.jpg" alt="Servicio de Animador"/>
-        <img height="100px" src="img/learnhowtodj_article.png" alt="Servicio de DJ"/>
-        <br/>
+    <main>
+        <div class="imagenes">
+            <h2>Imagenes</h2>
+            <img height="100px" src="https://i.ytimg.com/vi/olVNMbNC7OI/maxresdefault.jpg" alt="Servicio de Animador"/>
+            <img height="100px" src="img/learnhowtodj_article.png" alt="Servicio de DJ"/>
+            
+        </div>
+        
+        <div class="tablas">
 
-        <h2>Tablas</h2>
-        <table border ="1">
-            <thead>
-                <tr>
-                    <th>Cliente</th>
-                    <th class="fondo_naranja">Salón</th>
-                    <th>Servicio</th>
-                    <th>Total</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Juan</td>
-                    <!-- <td rowspan="2">Juan</td> para unir dos celdas en una columna-->
-                    <td>Grande</td>
-                    <td>Banda en vivo</td>
-                    <td>$2000000</td>
-                </tr>
-                <tr>
-                    <td>Juan</td>
-                    <td>Grande</td>
-                    <td>Animador</td>
-                    <td>$2000000</td>
-                </tr>
-                <tr>
-                    <td class="fondo_naranja">Maria</td>
-                    <td>Normal</td>
-                    <!-- <td colspan="2">Normal - sonido</td> para unir celdas en una fila-->
-                    <td>Sonido</td>
-                    <td>$100000</td>
-                </tr>
-            </tbody>
-            <tfoot>
+            <h2>Tablas</h2>
+            <table border ="1">
+                <thead>
+                    <tr>
+                        <th>Cliente</th>
+                        <th class="fondo_naranja">Salón</th>
+                        <th>Servicio</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Juan</td>
+                        <!-- <td rowspan="2">Juan</td> para unir dos celdas en una columna-->
+                        <td>Grande</td>
+                        <td>Banda en vivo</td>
+                        <td>$2000000</td>
+                    </tr>
+                    <tr>
+                        <td>Juan</td>
+                        <td>Grande</td>
+                        <td>Animador</td>
+                        <td>$2000000</td>
+                    </tr>
+                    <tr>
+                        <td class="fondo_naranja">Maria</td>
+                        <td>Normal</td>
+                        <!-- <td colspan="2">Normal - sonido</td> para unir celdas en una fila-->
+                        <td>Sonido</td>
+                        <td>$100000</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+    
+                </tfoot>
+            </table>
+        </div>
 
-            </tfoot>
-        </table>
-        <h2>Formularios</h2>
-            <form action="#" method="post">
-                <label for="fecha">Fecha</label>
-                <input type="date" name="fecha"  />
-                <br><br>
-                <label for="cliente">Cliente</label>
-                <input class="fondo_naranja" type="text" name="cliente" placeholder="Escriba su nombre" />
-                <br><br>
-                <label for="cantidad_meseros">Meseros Extras</label>
-                <input type="number" name= "cantidad_meseros" placeholder="Número de meseros">
-                <br><br>
-                <input type="radio" name= "salon" value="N"> Normal
-                <input type="radio" name= "salon" value="G"> Grande
-                <br><br>
-                <input type="checkbox" name= "servicios[]" value="1"> Animador
-                <input type="checkbox" name= "servicios[]" value="2"> Sonido 
-                <input type="checkbox" name= "servicios[]" value="3"> DJ
-                <input type="checkbox" name= "servicios[]" value="4"> Banda en vivo
-                <input type="checkbox" name= "servicios[]" value="5"> Organizador
-                <br><br>
-                <label for="vino">Tipo de vino</label>
-                <select name="vino" >
-                    <option value="-1">Seleccione el tipo de vino</option>
-                    <option value="1">Tinto</option>
-                    <option value="2">Rose</option>
-                    <option value="3">Blanco</option>
-                    <option value="4">Espumoso</option>
-                </select>
-                <br><br>
-                <label for="observaciones">Observaciones</label>
-                <textarea name="observaciones" id="" cols="30" rows="10"></textarea>
-                <br><br>
-                <input type="button" value="Botón">
-                <button type="button">Botón</button>
-                <br><br>
-                <input type="reset" value="Resetear">
-                <button type="reset">Resetear</button>
-                <br><br>
-                <input type="submit" value="Enviar">
-                <button class="fondo_naranja" type="submit">Enviar</button>
-                <!-- este ultimo button envia la info a la URL que este en el campo form action en # -->
-            </form>
+        <div class="formulario">
+
+            <h2>Formularios</h2>
+                <form action="#" method="post">
+                    <label for="fecha">Fecha</label>
+                    <input type="date" name="fecha"  />
+                    <br><br>
+                    <label for="cliente">Cliente</label>
+                    <input class="fondo_naranja" type="text" name="cliente" placeholder="Escriba su nombre" />
+                    <br><br>
+                    <label for="cantidad_meseros">Meseros Extras</label>
+                    <input type="number" name= "cantidad_meseros" placeholder="Número de meseros">
+                    <br><br>
+                    <input type="radio" name= "salon" value="N"> Normal
+                    <input type="radio" name= "salon" value="G"> Grande
+                    <br><br>
+                    <input type="checkbox" name= "servicios[]" value="1"> Animador
+                    <input type="checkbox" name= "servicios[]" value="2"> Sonido 
+                    <input type="checkbox" name= "servicios[]" value="3"> DJ
+                    <input type="checkbox" name= "servicios[]" value="4"> Banda en vivo
+                    <input type="checkbox" name= "servicios[]" value="5"> Organizador
+                    <br><br>
+                    <label for="vino">Tipo de vino</label>
+                    <select name="vino" >
+                        <option value="-1">Seleccione el tipo de vino</option>
+                        <option value="1">Tinto</option>
+                        <option value="2">Rose</option>
+                        <option value="3">Blanco</option>
+                        <option value="4">Espumoso</option>
+                    </select>
+                    <br><br>
+                    <label for="observaciones">Observaciones</label>
+                    <textarea name="observaciones" id="" cols="30" rows="10"></textarea>
+                    <br><br>
+                    <input type="button" value="Botón">
+                    <button type="button">Botón</button>
+                    <br><br>
+                    <input type="reset" value="Resetear">
+                    <button type="reset">Resetear</button>
+                    <br><br>
+                    <input type="submit" value="Enviar">
+                    <button class="fondo_naranja" type="submit">Enviar</button>
+                    <!-- este ultimo button envia la info a la URL que este en el campo form action en # -->
+                </form>
+        </div>
+
         
     </main>
     <footer>
