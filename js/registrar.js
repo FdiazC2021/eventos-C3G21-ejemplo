@@ -12,110 +12,132 @@
 // listasalones.splice(1,1);
 // // se ubica en la posicion 1 y elimina 1 elemento
 
-alert(`cantiad de salones ${listasalones.length}`)
-alert(listaSalones[0]);
+// alert(`cantiad de salones ${listasalones.length}`)
+// alert(listaSalones[0]);
 
-let cliente = prompt("Escriba su nombre");
-let documento = prompt("Escriba su documento");
-let salon = parseInt(prompt("Escoja el tipo de salón (1. Normal / 2. Grande)"));
-let meseroExtra = confirm("Desea meseros extras??");
-let cantidad = 0;
-let cantidadComida= 0;
-let total = 0;
-let nombreSalon = ["Normal", "Grande"];
-let precioSalon = [1000000, 2000000];
+// let cliente = prompt("Escriba su nombre");
+// let documento = prompt("Escriba su documento");
+// let salon = parseInt(prompt("Escoja el tipo de salón (1. Normal / 2. Grande)"));
+// let meseroExtra = confirm("Desea meseros extras??");
+// let cantidad = 0;
+// let cantidadComida= 0;
+// let total = 0;
+// let nombreSalon = ["Normal", "Grande"];
+// let precioSalon = [1000000, 2000000];
 
 
-salonNormal['precio']=800000;
-// Modifica el diccionario
+// salonNormal['precio']=800000;
+// // Modifica el diccionario
 
-document.write(`Precio: ${salonNormal.precio}`);
-console.log(salonNormal);
+// document.write(`Precio: ${salonNormal.precio}`);
+// console.log(salonNormal);
 
-let precioMesero = [150000, 100000];
-let precioComida = [50000, 40000];
+// let precioMesero = [150000, 100000];
+// let precioComida = [50000, 40000];
 
-let salonNormal = {"nombre":"Normal", 
-                    "precio": 1000000, 
-                    "extra_mesero":150000,
-                    "cantidad_meseros":2, 
-                    "plato":50000
-                };
-let salonGrande = {"nombre":"Grande", 
-                    "precio": 2000000, 
-                    "extra_mesero":100000,
-                    "cantidad_meseros":4, 
-                    "plato":40000
-                };
+// function saludar(nombre) {
+//     // document.write(`Hola ${nombre} Mundo desde función`);
+//     return `Hola ${nombre} Mundo desde función`;
+// }
 
-let listaSalones = [salonNormal, salonGrande];
-let listaEventos = [];
-
-let continuar;
-
-do {
-    
-    let evento = {};
-    evento['cliente'] = prompt("Escriba su nombre");
-    evento['documento'] = prompt("Escriba su documento");
-    let salon = parseInt(prompt("Escoja el tipo de salón (1. Normal / 2. Grande)"));
-    evento['salon'] = listaSalones[salon-1];
-    let meseroExtra = confirm("Desea meseros extras??");
-    if(meseroExtra){
-        evento['meseros'] = parseInt(prompt("Escriba la cantidad de meseros...."));
-    }else{
-        evento['meseros']=0;
+const saludar = (nombre, edad)=>{
+    if (edad>=18) {
+        document.write(`Hola ${nombre} mayor de edad..`)
+    } else {
+        document.write(`Hola ${nombre} menor de edad..`)
+        
     }
+};
+
+const saludar_abreviado = (nombre)=> `Hola ${nombre}, con funcion flecha abreviada`;
+
+// funcion de flecha
+
+let mensaje = saludar("Juan", 15);
+document.write(mensaje);
+
+
+// let salonNormal = {"nombre":"Normal", 
+//                     "precio": 1000000, 
+//                     "extra_mesero":150000,
+//                     "cantidad_meseros":2, 
+//                     "plato":50000
+//                 };
+// let salonGrande = {"nombre":"Grande", 
+//                     "precio": 2000000, 
+//                     "extra_mesero":100000,
+//                     "cantidad_meseros":4, 
+//                     "plato":40000
+//                 };
+
+// let listaSalones = [salonNormal, salonGrande];
+// let listaEventos = [];
+
+// let continuar;
+
+// do {
     
-    let servicioComida = confirm("Desea incluir el servicio de comida??");
+//     let evento = {};
+//     evento['cliente'] = prompt("Escriba su nombre");
+//     evento['documento'] = prompt("Escriba su documento");
+//     let salon = parseInt(prompt("Escoja el tipo de salón (1. Normal / 2. Grande)"));
+//     evento['salon'] = listaSalones[salon-1];
+//     let meseroExtra = confirm("Desea meseros extras??");
+//     if(meseroExtra){
+//         evento['meseros'] = parseInt(prompt("Escriba la cantidad de meseros...."));
+//     }else{
+//         evento['meseros']=0;
+//     }
     
-    if(servicioComida){
-        evento['platos'] = parseInt(prompt("Escriba la cantidad de platos..."));
-    }else{
-        evento['platos']=0;
-    }
+//     let servicioComida = confirm("Desea incluir el servicio de comida??");
+    
+//     if(servicioComida){
+//         evento['platos'] = parseInt(prompt("Escriba la cantidad de platos..."));
+//     }else{
+//         evento['platos']=0;
+//     }
 
     
-    let valorMesero = evento.meseros*evento.salon.extra_mesero;
-    let valorComida = evento.platos*evento.salon.plato;
+//     let valorMesero = evento.meseros*evento.salon.extra_mesero;
+//     let valorComida = evento.platos*evento.salon.plato;
 
-    evento['total'] = valorComida + valorMesero + evento.salon.precio;
+//     evento['total'] = valorComida + valorMesero + evento.salon.precio;
 
-    listaEventos.push(evento);
-    continuar = confirm("Registrar un nuevo evento?");
+//     listaEventos.push(evento);
+//     continuar = confirm("Registrar un nuevo evento?");
 
-} while (continuar);
+// } while (continuar);
 
-let xhtml = `<table>
-                <thead>
-                    <tr>
-                        <th>CLIENTE</th>
-                        <th>SALON</th>
-                        <th>MESEROS</th>
-                        <th>PLATOS</th>
-                        <th>TOTAL</th>
-                    </tr>
-                </thead>
-                <tbody>`;
+// let xhtml = `<table>
+//                 <thead>
+//                     <tr>
+//                         <th>CLIENTE</th>
+//                         <th>SALON</th>
+//                         <th>MESEROS</th>
+//                         <th>PLATOS</th>
+//                         <th>TOTAL</th>
+//                     </tr>
+//                 </thead>
+//                 <tbody>`;
 
-for (let evento of listaEventos) {
+// for (let evento of listaEventos) {
     
-    let meseros = parseInt(evento.meseros) + parseInt(evento.salon.cantidad_meseros);
-    xhtml += `<tr>
-                <td>${evento.cliente} - ${evento.documento}</td>
-                <td>${evento.salon.nombre}</td>
-                <td>${meseros}</td>
-                <td>${evento.platos}</td>
-                <td>$${evento.total}</td>
-            </tr>`;
+//     let meseros = parseInt(evento.meseros) + parseInt(evento.salon.cantidad_meseros);
+//     xhtml += `<tr>
+//                 <td>${evento.cliente} - ${evento.documento}</td>
+//                 <td>${evento.salon.nombre}</td>
+//                 <td>${meseros}</td>
+//                 <td>${evento.platos}</td>
+//                 <td>$${evento.total}</td>
+//             </tr>`;
 
-}
+// }
 
-xhtml +=  `</tbody>
-        </table>`;
+// xhtml +=  `</tbody>
+//         </table>`;
 
 
-document.write(xhtml);
+// document.write(xhtml);
 
 // let evento = {
 //     "cliente": "Juan",
