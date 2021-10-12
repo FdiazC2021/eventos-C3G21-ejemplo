@@ -19,6 +19,17 @@ let salonGrande = {"nombre":"Grande",
 
 let listaSalones = [salonNormal, salonGrande];
 
+const limpiarFormulario = ()=>{
+    let formulario = document.getElementById("formulario_evento");
+
+    let ipCliente = formulario.cliente;
+    ipCliente.value="";
+    
+    // formulario.reset();
+    
+
+}
+
 const procesarInformacion = ()=>{
     
     let formulario = document.getElementById("formulario_evento");
@@ -48,7 +59,7 @@ const procesarInformacion = ()=>{
 
    evento['total'] = valorComida + valorMesero + evento.salon.precio;
 
-
+   limpiarFormulario();
 
     // let input_cliente = formulario.cliente 
     // console.log(input_cliente)
