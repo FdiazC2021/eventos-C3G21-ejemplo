@@ -19,21 +19,76 @@ let salonGrande = {"nombre":"Grande",
 
 let listaSalones = [salonNormal, salonGrande];
 
+let listaEventos = [
+    {
+        cliente:"José",
+        documento:"79982634",
+        meseros:2,
+        platos:150,
+        salon:salonNormal,
+        total:3200000
+    },
+    {
+        cliente:"Maria",
+        documento:"123456789",
+        meseros:5,
+        platos:50,
+        salon:salonGrande,
+        total:3200000
+    },
+
+];
+
 const limpiarFormulario = ()=>{
     let formulario = document.getElementById("formulario_evento");
 
     let ipCliente = formulario.cliente;
     ipCliente.value="";
     
-    // formulario.reset();
     
-
+    
 }
+
+const cargarDatos = ()=>{
+
+    let tabla = document.getElementById("datos_eventos");
+
+    tabla.innerHTML = "";
+    for (const evento of listaEventos) {
+        tabla.innerHTML += `<tr>
+                            <td>${evento.cliente}</td>
+                            <td>${evento.salon.nombre}</td>
+                            <td>${evento.meseros}</td>
+                            <td>${evento.platos}</td>
+                            <td>${evento.total}</td>
+                            </tr>`;
+
+
+    }
+    
+};
+
+cargarDatos();
+
+const agregarEvento = (evento)=>{
+
+    let tabla = document.getElementById("datos_eventos");
+
+    tabla.innerHTML += `<tr>
+                            <td>${evento.cliente}</td>
+                            <td>${evento.salon.nombre}</td>
+                            <td>${evento.meseros}</td>
+                            <td>${evento.platos}</td>
+                            <td>${evento.total}</td>
+                            </tr>`;
+                            
+
+};
 
 const procesarInformacion = ()=>{
     
     let formulario = document.getElementById("formulario_evento");
-
+    
     let evento = {};
     evento['cliente'] = formulario.cliente.value;
     evento['documento'] = formulario.documento.value;
@@ -49,22 +104,27 @@ const procesarInformacion = ()=>{
     let servicioComida = formulario.servicio_comida.value;
     
     if(servicioComida=="Si"){
-       evento['platos'] = formulario.platos.value;
-   }else{
-       evento['platos']=0;
-   }
-
-   let valorMesero = evento.meseros*evento.salon.extra_mesero;
-   let valorComida = evento.platos*evento.salon.plato;
-
-   evento['total'] = valorComida + valorMesero + evento.salon.precio;
-
-   limpiarFormulario();
-
+        evento['platos'] = formulario.platos.value;
+    }else{
+        evento['platos']=0;
+    }
+    
+    let valorMesero = evento.meseros*evento.salon.extra_mesero;
+    let valorComida = evento.platos*evento.salon.plato;
+    
+    evento['total'] = valorComida + valorMesero + evento.salon.precio;
+    
+    listaEventos.push(evento);
+    
+    formulario.reset();
+    // limpiarFormulario();
+    // agregarEvento(evento);
+    
     // let input_cliente = formulario.cliente 
     // console.log(input_cliente)
     // alert("hice click........");
 
+    
 
 };
 
